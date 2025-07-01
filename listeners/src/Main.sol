@@ -7,9 +7,9 @@ import "sim-idx-generated/Generated.sol";
 contract Triggers is BaseTriggers {
     function triggers() external virtual override {
         Listener listener = new Listener();
-        addTrigger(ChainIdContract(1, 0x1F98431c8aD98523631AE4a59f267346ea31F984), listener.triggerOnCreatePoolFunction());
-        addTrigger(ChainIdContract(130, 0x1F98400000000000000000000000000000000003), listener.triggerOnCreatePoolFunction());
-        addTrigger(ChainIdContract(8453, 0x33128a8fC17869897dcE68Ed026d694621f6FDfD), listener.triggerOnCreatePoolFunction());
+        addTrigger(chainContract(Chains.Ethereum, 0x1F98431c8aD98523631AE4a59f267346ea31F984), listener.triggerOnCreatePoolFunction());
+        addTrigger(chainContract(Chains.Unichain, 0x1F98400000000000000000000000000000000003), listener.triggerOnCreatePoolFunction());
+        addTrigger(chainContract(Chains.Base, 0x33128a8fC17869897dcE68Ed026d694621f6FDfD), listener.triggerOnCreatePoolFunction());
     }
 }
 
