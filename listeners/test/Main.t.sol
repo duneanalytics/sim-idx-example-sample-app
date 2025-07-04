@@ -21,8 +21,8 @@ contract ListenerTest is Test {
 
         listener.onCreatePoolFunction(
             ctx,
-            UniswapV3Factory$createPoolFunctionInputs({tokenA: 0x8ce8725A65DaE7d3D5543372D5415f4F8ad448f9, tokenB: 0x8ce8725A65DaE7d3D5543372D5415f4F8ad448f9, fee: 1}),
-            UniswapV3Factory$createPoolFunctionOutputs({pool: 0x8ce8725A65DaE7d3D5543372D5415f4F8ad448f9})
+            UniswapV3Factory$CreatePoolFunctionInputs({tokenA: 0x8ce8725A65DaE7d3D5543372D5415f4F8ad448f9, tokenB: 0x8ce8725A65DaE7d3D5543372D5415f4F8ad448f9, fee: 1}),
+            UniswapV3Factory$CreatePoolFunctionOutputs({pool: 0x8ce8725A65DaE7d3D5543372D5415f4F8ad448f9})
         );
 
         Vm.Log[] memory entries = vm.getRecordedLogs();
@@ -44,8 +44,8 @@ contract ListenerTest is Test {
 
         listener.onCreatePoolFunction(
             ctx,
-            UniswapV3Factory$createPoolFunctionInputs({tokenA: tokenA, tokenB: tokenB, fee: fee}),
-            UniswapV3Factory$createPoolFunctionOutputs({pool: 0x8ce8725A65DaE7d3D5543372D5415f4F8ad448f9})
+            UniswapV3Factory$CreatePoolFunctionInputs({tokenA: tokenA, tokenB: tokenB, fee: fee}),
+            UniswapV3Factory$CreatePoolFunctionOutputs({pool: 0x8ce8725A65DaE7d3D5543372D5415f4F8ad448f9})
         );
 
         Vm.Log[] memory entries = vm.getRecordedLogs();

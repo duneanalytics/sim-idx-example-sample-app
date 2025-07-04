@@ -25,8 +25,8 @@ contract Listener is UniswapV3Factory$OnCreatePoolFunction {
     /// The only requirement for handlers is that they have the correct signature, but usually you will use generated interfaces to help write them.
     function onCreatePoolFunction(
         FunctionContext memory ctx,
-        UniswapV3Factory$createPoolFunctionInputs memory inputs,
-        UniswapV3Factory$createPoolFunctionOutputs memory outputs
+        UniswapV3Factory$CreatePoolFunctionInputs memory inputs,
+        UniswapV3Factory$CreatePoolFunctionOutputs memory outputs
     )
         external
         override
