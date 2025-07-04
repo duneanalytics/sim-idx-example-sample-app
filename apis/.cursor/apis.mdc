@@ -27,19 +27,6 @@ app.get("/api/resource", async (c) => {
 });
 ```
 
-## Parameter Handling
-```typescript
-// Path params: c.req.param("id")
-// Query params: c.req.query("page") || "1"
-// Validation helpers:
-const validateInt = (val: string | undefined, def: number) => {
-  const parsed = parseInt(val || "");
-  return isNaN(parsed) || parsed < 1 ? def : parsed;
-};
-const validateAddress = (addr: string | undefined) => 
-  addr && /^0x[a-fA-F0-9]{40}$/.test(addr) ? addr.toLowerCase() : null;
-```
-
 ## Database Patterns
 ```typescript
 // Basic query

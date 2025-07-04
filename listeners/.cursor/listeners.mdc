@@ -3,22 +3,7 @@ description:
 globs: *.sol
 alwaysApply: false
 ---
-# Sim Idx Project Rules
-
-Read the docs from here https://docs.sim.dune.com/llms-full.txt
-
-## Framework Overview
-- Sim idx is Dune's blockchain event indexing framework
-- Projects have two main components: Solidity listeners and TypeScript APIs  
-- Listeners hook into blockchain events, APIs serve indexed data
-
-## Project Structure
-- `listeners/` - Solidity contracts for event listening
-- `apis/` - TypeScript APIs using Hono + Drizzle
-- `abis/` - Contract ABI files for code generation
-- `sim.toml` - Project configuration
-
-## Solidity Listener Patterns
+## Sim IDX Listener Patterns
 
 ### Contract Structure
 - Main contract extends `BaseTriggers` with `triggers()` function
@@ -27,7 +12,7 @@ Read the docs from here https://docs.sim.dune.com/llms-full.txt
 
 ### Event Handling
 - Event handlers receive `EventContext` and typed params struct
-- Use `EventContext` to access transaction/block data: `ctx.txn.hash()`, `ctx.txn.chainId`
+- Use `EventContext` to access transaction/block data: `ctx.txn.hash`, `ctx.txn.chainId`
 - When you are handling an event, the events params are in generated structs: `inputs.minter`, `inputs.mintAmount`
 - Emit custom events or call external functions in handlers
 
@@ -35,19 +20,19 @@ Read the docs from here https://docs.sim.dune.com/llms-full.txt
 ```solidity
 // Register event triggers
 addTrigger(
-    ChainIdContract(chainId, contractAddress),
+    chainContract(Chains.Ethereum, contractAddress),
     listener.triggerOnEventName()
 );
 
 // Register function triggers  
 addTrigger(
-    ChainIdContract(chainId, contractAddress),
+    chainContract(Chains.Base, contractAddress),
     listener.triggerOnFunctionName()
 );
 ```
 
 ### Context Usage
-- `ctx.txn.hash()` - transaction hash
+- `ctx.txn.hash` - transaction hash
 - `ctx.txn.chainId` - chain ID
 - `ctx.txn.call.caller` - transaction sender
 - `ctx.txn.call.callee` - contract being called
@@ -56,4 +41,4 @@ addTrigger(
 ### Development Workflow
 - Generated code is in `lib/sim-idx-generated/`  
 - Never edit generated files directly
-- Test listeners with Foundry: `forge test`
+- Test listeners with Foundry: `sim test`
