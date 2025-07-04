@@ -37,7 +37,7 @@ app.get("/api/resource", async (c) => {
 .select().from(table).where(eq(column, value))
 
 // Count query
-.select({ total: sql<number>`COUNT(*)` }).from(table)
+.select({ total: count() }).from(table);
 
 // Complex filtering
 .where(and(
