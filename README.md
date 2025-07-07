@@ -35,7 +35,7 @@ The `listeners/` directory is a Foundry project where your indexing logic lives.
 
 Ready to start building? Check out our comprehensive guides:
 
--   **[Deploying Your App](http://docs.sim.dune.com/idx/deployment)** - Deploy your app
+-   **[Deploying Your App](https://docs.sim.dune.com/idx/deployment)** - Deploy your app
 -   **[Adding ABIs](https://docs.sim.dune.com/idx/cli#sim-abi)** - How to add contract ABIs
 -   **[Writing Listeners](https://docs.sim.dune.com/idx/listener)** - Define your indexing logic
 -   **[CLI Reference](https://docs.sim.dune.com/idx/cli)** - All available commands
