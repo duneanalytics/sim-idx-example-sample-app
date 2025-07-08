@@ -14,7 +14,7 @@ contract Triggers is BaseTriggers {
 }
 
 /// Index calls to the UniswapV3Factory.createPool function on Ethereum
-/// To hook on more function calls, specify that this listener should implement that interface and follow the compiler errors.
+/// To trigger on more function calls, specify that this listener should implement that interface and follow the compiler errors.
 contract Listener is UniswapV3Factory$OnCreatePoolFunction {
     /// Emitted events are indexed.
     /// To change the data which is indexed, modify the event or add more events.
