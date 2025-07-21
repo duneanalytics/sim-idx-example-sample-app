@@ -17,10 +17,9 @@ contract UniswapV3FactoryListener is UniswapV3Factory$OnCreatePoolFunction {
         FunctionContext memory ctx,
         UniswapV3Factory$CreatePoolFunctionInputs memory inputs,
         UniswapV3Factory$CreatePoolFunctionOutputs memory outputs
-    )
-        external
-        override
-    {
-        emit PoolCreated(uint64(block.chainid), ctx.txn.call.callee, outputs.pool, inputs.tokenA, inputs.tokenB, inputs.fee);
+    ) external override {
+        emit PoolCreated(
+            uint64(block.chainid), ctx.txn.call.callee, outputs.pool, inputs.tokenA, inputs.tokenB, inputs.fee
+        );
     }
 }
