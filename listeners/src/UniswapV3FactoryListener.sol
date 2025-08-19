@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
+import "sim-idx-sol/Simidx.sol";
 import "sim-idx-generated/Generated.sol";
 
 /// Index calls to the UniswapV3Factory.createPool function on Ethereum
